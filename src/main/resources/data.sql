@@ -5,3 +5,10 @@ INSERT INTO tb_player (nick_Name, level, money, vip, status, email, password) VA
 INSERT INTO tb_role (authority) VALUES ('ROLE_PLAYER');
 INSERT INTO tb_role (authority) VALUES ('ROLE_ADM');
 INSERT INTO tb_role (authority) VALUES ('ROLE_CEO');
+
+INSERT INTO tb_player_role (player_id, role_id) VALUES (1, 1);
+INSERT INTO tb_player_role (player_id, role_id) VALUES (2, 1);
+INSERT INTO tb_player_role (player_id, role_id) VALUES (2, 2);
+INSERT INTO tb_player_role (player_id, role_id) VALUES (3, 1);
+INSERT INTO tb_player_role (player_id, role_id) VALUES (3, 2);
+INSERT INTO tb_player_role (player_id, role_id) VALUES (3, 3);

@@ -1,11 +1,16 @@
 package github.guisofiati.forum.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import github.guisofiati.forum.entities.enums.StatusPlayer;
@@ -25,6 +30,12 @@ public class Player implements Serializable{
 	private StatusPlayer status;
 	private String email;
 	private String password;
+	
+	@ManyToMany
+	@JoinTable(name = "tb_player_role",
+	joinColumns = @JoinColumn(name = "player_id"),
+	inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles = new HashSet<>();
 	
 	public Player() {
 	}
@@ -103,6 +114,10 @@ public class Player implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public Set<Role> getRoles() {
+		return roles;
 	}
 
 	@Override
