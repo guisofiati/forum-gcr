@@ -20,3 +20,12 @@ INSERT INTO tb_player_role (player_id, role_id) VALUES (3, 3);
 INSERT INTO tb_notification (text, moment, read, route, player_id) VALUES ('Você recebeu uma reputação do jogador Thiago_Nunes', TIMESTAMP WITH TIME ZONE '2020-12-13T13:00:00Z', false, '/reputations', 1);
 INSERT INTO tb_notification (text, moment, read, route, player_id) VALUES ('Você foi banido do servidor. Saiba o por quê', TIMESTAMP WITH TIME ZONE '2020-12-12T13:00:00Z', true, '/banneds/1', 2);
 INSERT INTO tb_notification (text, moment, read, route, player_id) VALUES ('Você recebeu muitas reputações do seu último tópico', TIMESTAMP WITH TIME ZONE '2020-12-11T13:00:00Z', true, '/reputations', 3);
+
+INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Regras', 'Antes de jogar leia todas as regras do servidor.', 1, 'https://aempreendedora.com.br/wp-content/uploads/2018/05/Regras.jpg');
+INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Changelog', 'Últimas atualizações do servidor.', 2, 'https://www.softdownload.com.br/wp-content/uploads/2019/04/10_programas_atualizar_automatico.png');
+INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Clan', 'Junte-se a um clã e participe de guerras e invasões!', 3, 'https://www.einerd.com.br/wp-content/uploads/2019/11/GTA-cidades-capa-890x466.png');
+INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Denúncias', 'Área de denúncias de jogadores.', 4, 'https://omd.com.br/wp-content/uploads/2019/04/2019-ABRIL-IMAGEM-2.jpg');
+INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Banidos', 'Área de jogadores banidos e revisões de banimento.', 5, 'https://st.depositphotos.com/1031343/3818/v/600/depositphotos_38188327-stock-illustration-banned-stamp.jpg');
+INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Sugestões', 'Sugestões de profissões, melhorias ou funcionalidades que podemos trazer na próxima atualização.', 6, 'https://www.curitiba.pr.gov.br/faleaqui/img/sugestao.png');
+INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Reclamações', 'Se sentiu lezado de alguma maneira por um administrador? Reclame aqui.', 7, 'https://www.rio450anos.com.br/wp-content/uploads/2018/10/bloqueio-procon-rj.jpg');
+INSERT INTO tb_section (title, description, position, img_Url) VALUES ('4Fun', 'Poste suas fotos e vídeos no servidor.', 8, 'https://www.cxtv.com.br/img/Tvs/Logo/webp-l/0a22e908b9ea3f6316c95eff053e0ac6.webp');
