@@ -1,41 +1,42 @@
 package github.guisofiati.forum.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.Instant;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_section")
-public class Section implements Serializable{
+@Table(name = "tb_topic")
+public class Topic implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private String description;
-	private Integer position;
-	private String imgUrl;
 	
-	@OneToMany(mappedBy = "section")
-	private List<Topic> topics = new ArrayList<>();
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant moment;
 	
-	public Section() {
+	@ManyToOne
+	@JoinColumn(name = "section_id")
+	private Section section;
+	
+	public Topic() {
 	}
 
-	public Section(Long id, String title, String description, Integer position, String imgUrl) {
+	public Topic(Long id, String title, Instant moment, Section section) {
 		this.id = id;
 		this.title = title;
-		this.description = description;
-		this.position = position;
-		this.imgUrl = imgUrl;
+		this.moment = moment;
+		this.section = section;
 	}
 
 	public Long getId() {
@@ -54,34 +55,22 @@ public class Section implements Serializable{
 		this.title = title;
 	}
 
-	public String getDescription() {
-		return description;
+	public Instant getMoment() {
+		return moment;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setMoment(Instant moment) {
+		this.moment = moment;
 	}
 
-	public Integer getPosition() {
-		return position;
+	public Section getSection() {
+		return section;
 	}
 
-	public void setPosition(Integer position) {
-		this.position = position;
+	public void setSection(Section section) {
+		this.section = section;
 	}
 
-	public String getImgUrl() {
-		return imgUrl;
-	}
-
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
-	}
-
-	public List<Topic> getTopics() {
-		return topics;
-	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -98,7 +87,7 @@ public class Section implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Section other = (Section) obj;
+		Topic other = (Topic) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

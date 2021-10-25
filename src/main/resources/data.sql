@@ -29,3 +29,6 @@ INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Banidos'
 INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Sugestões', 'Sugestões de profissões, melhorias ou funcionalidades que podemos trazer na próxima atualização.', 6, 'https://www.curitiba.pr.gov.br/faleaqui/img/sugestao.png');
 INSERT INTO tb_section (title, description, position, img_Url) VALUES ('Reclamações', 'Se sentiu lezado de alguma maneira por um administrador? Reclame aqui.', 7, 'https://www.rio450anos.com.br/wp-content/uploads/2018/10/bloqueio-procon-rj.jpg');
 INSERT INTO tb_section (title, description, position, img_Url) VALUES ('4Fun', 'Poste suas fotos e vídeos no servidor.', 8, 'https://www.cxtv.com.br/img/Tvs/Logo/webp-l/0a22e908b9ea3f6316c95eff053e0ac6.webp');
+
+INSERT INTO tb_topic (section_id, title, moment) VALUES (8, 'Clan N.L completa 4 anos! Nossa galeria', TIMESTAMP WITH TIME ZONE '2021-02-10T13:00:00Z');
+INSERT INTO tb_topic (section_id, title, moment) VALUES (7, 'Reclamação do adm MegaFire', TIMESTAMP WITH TIME ZONE '2021-05-23T13:00:00Z');
