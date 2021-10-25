@@ -1,16 +1,20 @@
 package github.guisofiati.forum.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import github.guisofiati.forum.entities.enums.StatusPlayer;
@@ -31,11 +35,14 @@ public class Player implements Serializable{
 	private String email;
 	private String password;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tb_player_role",
 	joinColumns = @JoinColumn(name = "player_id"),
 	inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
+	
+	@OneToMany(mappedBy = "player")
+	private List<Notification> notifications = new ArrayList<>();
 	
 	public Player() {
 	}
@@ -118,6 +125,10 @@ public class Player implements Serializable{
 	
 	public Set<Role> getRoles() {
 		return roles;
+	}
+	
+	public List<Notification> getNotifications() {
+		return notifications;
 	}
 
 	@Override
