@@ -1,6 +1,10 @@
-INSERT INTO tb_player (nick_Name, level, money, vip, status, email, password) VALUES ('Sorata', 1000, 10000.0, false, 1, 'dominic@gmail.com', '123456');
-INSERT INTO tb_player (nick_Name, level, money, vip, status, email, password) VALUES ('Thiago_Nunes', 500, 100000.0, false, 2, 'thiagonunes@gmail.com', '123456');
-INSERT INTO tb_player (nick_Name, level, money, vip, status, email, password) VALUES ('Gui.v7', 1150, 550000.0, true, 0, 'guiv7@gmail.com', '123456');
+INSERT INTO tb_clan (name, tag, leader, base_id) VALUES ('No Law', 'N.L', 'Gui.v7', 1);
+INSERT INTO tb_clan (name, tag, leader, base_id) VALUES ('2k', '2k', 'Shapp2k', 2);
+INSERT INTO tb_clan (name, tag, leader, base_id) VALUES ('Policia Militar', 'P.M', '[PM]Michael', 3);
+
+INSERT INTO tb_player (nick_Name, level, money, vip, status, clan_id, email, password) VALUES ('Sorata', 1000, 10000.0, false, 1, 2, 'dominic@gmail.com', '123456');
+INSERT INTO tb_player (nick_Name, level, money, vip, status, clan_id, email, password) VALUES ('Thiago_Nunes', 500, 100000.0, false, 2, null, 'thiagonunes@gmail.com', '123456');
+INSERT INTO tb_player (nick_Name, level, money, vip, status, clan_id, email, password) VALUES ('Gui.v7', 1150, 550000.0, true, 0, 1, 'guiv7@gmail.com', '123456');
 
 INSERT INTO tb_role (authority) VALUES ('ROLE_PLAYER');
 INSERT INTO tb_role (authority) VALUES ('ROLE_ADM');

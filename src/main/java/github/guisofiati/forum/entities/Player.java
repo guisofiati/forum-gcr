@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -43,6 +44,10 @@ public class Player implements Serializable{
 	
 	@OneToMany(mappedBy = "player")
 	private List<Notification> notifications = new ArrayList<>();
+	
+	@ManyToOne
+	@JoinColumn(name = "clan_id")
+	private Clan clan;
 	
 	public Player() {
 	}
