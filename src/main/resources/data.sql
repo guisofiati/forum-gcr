@@ -32,3 +32,8 @@ INSERT INTO tb_section (title, description, position, img_Url) VALUES ('4Fun', '
 
 INSERT INTO tb_topic (section_id, title, moment) VALUES (8, 'Clan N.L completa 4 anos! Nossa galeria', TIMESTAMP WITH TIME ZONE '2021-02-10T13:00:00Z');
 INSERT INTO tb_topic (section_id, title, moment) VALUES (7, 'Reclamação do adm MegaFire', TIMESTAMP WITH TIME ZONE '2021-05-23T13:00:00Z');
+
+INSERT INTO tb_topic (section_id, title, moment) VALUES (4, 'Denúncia: Rodrigo.v7', TIMESTAMP WITH TIME ZONE '2021-05-23T13:00:00Z');
+INSERT INTO tb_report (id, player_Accused, reason, img_Or_Video_Url, status) VALUES (3, 'MineirinHakaishin', 'Desrespeito. Xingando todos os players', 'https://santosbancarios.com.br/uploads/images/2017/12/bancario-do-itau-nao-permita-desrespeito-ao-abono-assiduidade-1513937829.jpg', 1);
+
+
